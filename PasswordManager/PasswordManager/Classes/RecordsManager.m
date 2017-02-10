@@ -1,12 +1,7 @@
-//
-//  RecordsManager.m
-//  PasswordManager
-//
-//  Created by Maxim Zabelin on 20/02/14.
-//  Copyright (c) 2014 Noveo. All rights reserved.
-//
-
 #import "RecordsManager.h"
+#import "Preferences.h"
+
+static NSString *const kPasswordsArray = @"PasswordsArray";
 
 @interface RecordsManager ()
 
@@ -16,9 +11,6 @@
 @end
 
 @implementation RecordsManager
-
-@synthesize url = url_;
-@synthesize mutableRecords = mutableRecords_;
 
 #pragma mark - Initialization
 
@@ -33,7 +25,7 @@
 - (instancetype)initWithURL:(NSURL *)url
 {
     if ((self = [super init])) {
-        url_ = url;
+        _url = url;
     }
 
     return self;
@@ -41,23 +33,60 @@
 
 #pragma mark - Management of records
 
-- (void)registerRecord:(NSDictionary *)record
+- (void)registerRecord:(NSDictionary *)record atIndex:(NSUInteger)index
 {
     if ([record count] > 0) {
-        [self.mutableRecords addObject:record];
+        if(index == NSIntegerMax) {
+            [self.mutableRecords addObject:record];
+        } else {
+            self.mutableRecords[index] = record;
+        }
+    }
+}
+
+- (void)deleteRecordAtIndex:(NSUInteger)index
+{
+    [self.mutableRecords removeObjectAtIndex:index];
+}
+
+- (void)eraseStorage:(NSInteger)storageType
+{
+    switch (storageType)
+    {
+        case StorageTypeFilesOnDevice:
+        {
+            [@[] writeToURL:self.url atomically:YES];
+        } break;
+        case StorageTypeUserDefaults:
+        {
+            [[NSUserDefaults standardUserDefaults] setObject:@[] forKey:kPasswordsArray];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
     }
 }
 
 - (NSMutableArray *)mutableRecords
 {
-    if (!mutableRecords_) {
-        mutableRecords_ = [NSMutableArray arrayWithContentsOfURL:self.url];
-        if (!mutableRecords_) {
-            mutableRecords_ = [NSMutableArray array];
+    if (!_mutableRecords) {
+        switch ([[Preferences standardPreferences] storageType])
+        {
+            case StorageTypeFilesOnDevice:
+            {
+                _mutableRecords = [NSMutableArray arrayWithContentsOfURL:self.url];
+            }
+                break;
+            case StorageTypeUserDefaults:
+            {
+                _mutableRecords = [[NSUserDefaults standardUserDefaults] mutableArrayValueForKey:kPasswordsArray];
+            }
         }
+        if (![_mutableRecords count]) {
+            _mutableRecords = [NSMutableArray array];
+        }
+
     }
 
-    return mutableRecords_;
+    return _mutableRecords;
 }
 
 - (NSArray *)records
@@ -69,7 +98,20 @@
 
 - (BOOL)synchronize
 {
-    return [self.mutableRecords writeToURL:self.url atomically:YES];
+    switch ([[Preferences standardPreferences] storageType])
+    {
+        case StorageTypeFilesOnDevice:
+        {
+            return [self.mutableRecords writeToURL:self.url atomically:YES];
+        }
+        case StorageTypeUserDefaults:
+        {
+            [[NSUserDefaults standardUserDefaults] setObject:[self records] forKey:kPasswordsArray];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            return YES;
+        }
+    }
+    return NO;
 }
 
 @end

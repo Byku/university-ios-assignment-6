@@ -1,12 +1,4 @@
-//
-//  NewRecordViewController.m
-//  PasswordManager
-//
-//  Created by Maxim Zabelin on 20/02/14.
-//  Copyright (c) 2014 Noveo. All rights reserved.
-//
-
-#import "NewRecordViewController.h"
+#import "RecordViewController.h"
 #import "PasswordGenerator.h"
 #import "Preferences.h"
 #import "Record.h"
@@ -19,11 +11,12 @@ static NSString *const LowercaseLetterAlphabet = @"abcdefghijklmnopqrstuvwxyz";
 static NSString *const UppercaseLetterAlphabet = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 static NSString *const DecimalDigitAlphabet = @"1234567890";
 
-@interface NewRecordViewController ()
+@interface RecordViewController ()
     <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *serviceNameTextField;
-@property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
+@property (nonatomic) IBOutlet UITextField *serviceNameTextField;
+@property (nonatomic) IBOutlet UILabel *passwordLabel;
+@property (nonatomic) IBOutlet UIButton *deleteButton;
 
 - (void)refreshPassword;
 - (void)saveRecord;
@@ -33,15 +26,11 @@ static NSString *const DecimalDigitAlphabet = @"1234567890";
 - (void)didTouchSaveBarButtonItem:(UIBarButtonItem *)sender;
 
 - (IBAction)didTouchRefreshButton:(UIButton *)sender;
+- (IBAction)didTouchDeleteButton:(UIButton *)sender;
 
 @end
 
-@implementation NewRecordViewController
-
-@synthesize delegate = delegate_;
-
-@synthesize serviceNameTextField = serviceNameTextField_;
-@synthesize passwordLabel = passwordLabel_;
+@implementation RecordViewController
 
 #pragma mark - Auxiliaries
 
@@ -78,7 +67,7 @@ static NSString *const DecimalDigitAlphabet = @"1234567890";
         NSDictionary *const record =
             @{kServiceName: self.serviceNameTextField.text,
               kPassword: self.passwordLabel.text};
-        [self.delegate newRecordViewController:self didFinishWithRecord:record];
+        [self.delegate recordViewController:self didFinishWithRecord:record index:self.serviceIndex];
     }
 }
 
@@ -89,6 +78,8 @@ static NSString *const DecimalDigitAlphabet = @"1234567890";
     [super viewDidLoad];
 
     if (!!self.navigationItem) {
+        self.deleteButton.hidden = !self.record;
+
         UIBarButtonItem *const cancelBarButtonItem =
             [[UIBarButtonItem alloc]
                 initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
@@ -103,20 +94,27 @@ static NSString *const DecimalDigitAlphabet = @"1234567890";
                                      action:@selector(didTouchSaveBarButtonItem:)];
         [self.navigationItem setRightBarButtonItem:saveBarButtonItem];
     }
+
+    if(!!self.record){
+        self.serviceNameTextField.text = self.record[kServiceName];
+        self.passwordLabel.text = self.record[kPassword];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
 
-    [self refreshPassword];
+    if(!self.record){
+        [self refreshPassword];
+    }
 }
 
 #pragma mark - Actions
 
 - (void)didTouchCancelBarButtonItem:(UIBarButtonItem *)sender
 {
-    [self.delegate newRecordViewController:self didFinishWithRecord:nil];
+    [self.delegate recordViewController:self didFinishWithRecord:nil index:NSIntegerMax];
 }
 
 - (void)didTouchSaveBarButtonItem:(UIBarButtonItem *)sender
@@ -129,12 +127,15 @@ static NSString *const DecimalDigitAlphabet = @"1234567890";
     [self refreshPassword];
 }
 
+- (IBAction)didTouchDeleteButton:(UIButton *)sender {
+    [self.delegate recordViewController:self didFinishWithDeleteRecordAtIndex:self.serviceIndex];
+}
+
 #pragma mark - UITextFieldDelegate implementation
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self saveRecord];
-
     return YES;
 }
 

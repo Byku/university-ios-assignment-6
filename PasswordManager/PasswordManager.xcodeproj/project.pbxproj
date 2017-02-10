@@ -19,11 +19,15 @@
 		93DE161E18B5929400A46FD2 /* NSMutableString+Exchange.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DE161D18B5929400A46FD2 /* NSMutableString+Exchange.m */; };
 		93DE162118B5955100A46FD2 /* NSString+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DE162018B5955100A46FD2 /* NSString+Shuffling.m */; };
 		93E767DC18B5D8DE0053F9F0 /* RecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E767DA18B5D8DE0053F9F0 /* RecordsViewController.m */; };
-		93E767DD18B5D8DE0053F9F0 /* RecordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93E767DB18B5D8DE0053F9F0 /* RecordsViewController.xib */; };
 		93E767E018B5DA9A0053F9F0 /* RecordsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E767DF18B5DA9A0053F9F0 /* RecordsManager.m */; };
 		93E767E318B5EDD90053F9F0 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E767E218B5EDD90053F9F0 /* Preferences.m */; };
-		93E767E618B5F3790053F9F0 /* NewRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E767E518B5F3790053F9F0 /* NewRecordViewController.m */; };
-		93E767E818B5F9BA0053F9F0 /* NewRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93E767E718B5F9BA0053F9F0 /* NewRecordViewController.xib */; };
+		93E767E618B5F3790053F9F0 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E767E518B5F3790053F9F0 /* RecordViewController.m */; };
+		93E767E818B5F9BA0053F9F0 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93E767E718B5F9BA0053F9F0 /* RecordViewController.xib */; };
+		DA08C9D81E27C3D4002EB84A /* RecordsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA08C9DA1E27C3D4002EB84A /* RecordsViewController.xib */; };
+		DA0A82FE1E4B2C91001967A4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA0A82FD1E4B2C91001967A4 /* Settings.bundle */; };
+		DAA48A651E1007C100487FD6 /* properties.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA48A641E1007C100487FD6 /* properties.png */; };
+		DAA48A691E10088900487FD6 /* PropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA48A671E10088900487FD6 /* PropertiesViewController.m */; };
+		DAA48A6A1E10088900487FD6 /* PropertiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA48A681E10088900487FD6 /* PropertiesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,14 +54,19 @@
 		93DE162018B5955100A46FD2 /* NSString+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Shuffling.m"; sourceTree = "<group>"; };
 		93E767D918B5D8DE0053F9F0 /* RecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordsViewController.h; sourceTree = "<group>"; };
 		93E767DA18B5D8DE0053F9F0 /* RecordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsViewController.m; sourceTree = "<group>"; };
-		93E767DB18B5D8DE0053F9F0 /* RecordsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordsViewController.xib; sourceTree = "<group>"; };
 		93E767DE18B5DA9A0053F9F0 /* RecordsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordsManager.h; sourceTree = "<group>"; };
 		93E767DF18B5DA9A0053F9F0 /* RecordsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordsManager.m; sourceTree = "<group>"; };
 		93E767E118B5EDD90053F9F0 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		93E767E218B5EDD90053F9F0 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
-		93E767E418B5F3790053F9F0 /* NewRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRecordViewController.h; sourceTree = "<group>"; };
-		93E767E518B5F3790053F9F0 /* NewRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRecordViewController.m; sourceTree = "<group>"; };
-		93E767E718B5F9BA0053F9F0 /* NewRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewRecordViewController.xib; sourceTree = "<group>"; };
+		93E767E418B5F3790053F9F0 /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		93E767E518B5F3790053F9F0 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
+		93E767E718B5F9BA0053F9F0 /* RecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
+		DA08C9D91E27C3D4002EB84A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RecordsViewController.xib; sourceTree = "<group>"; };
+		DA0A82FD1E4B2C91001967A4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		DAA48A641E1007C100487FD6 /* properties.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = properties.png; path = Classes/properties.png; sourceTree = "<group>"; };
+		DAA48A661E10088900487FD6 /* PropertiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertiesViewController.h; sourceTree = "<group>"; };
+		DAA48A671E10088900487FD6 /* PropertiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertiesViewController.m; sourceTree = "<group>"; };
+		DAA48A681E10088900487FD6 /* PropertiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertiesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +86,7 @@
 		93DE15D618B4AA8D00A46FD2 = {
 			isa = PBXGroup;
 			children = (
+				DA0A82FD1E4B2C91001967A4 /* Settings.bundle */,
 				93DE15E818B4AA8D00A46FD2 /* PasswordManager */,
 				93DE15E118B4AA8D00A46FD2 /* Frameworks */,
 				93DE15E018B4AA8D00A46FD2 /* Products */,
@@ -108,6 +118,7 @@
 				93DE161118B4AAD800A46FD2 /* Classes */,
 				93DE15E918B4AA8D00A46FD2 /* Supporting Files */,
 				93DE15F418B4AA8D00A46FD2 /* Images.xcassets */,
+				DAA48A641E1007C100487FD6 /* properties.png */,
 			);
 			path = PasswordManager;
 			sourceTree = "<group>";
@@ -129,9 +140,9 @@
 				93DE162218B5955400A46FD2 /* Categories */,
 				93DE161218B4AAD800A46FD2 /* AppDelegate.h */,
 				93DE161318B4AAD800A46FD2 /* AppDelegate.m */,
-				93E767E418B5F3790053F9F0 /* NewRecordViewController.h */,
-				93E767E518B5F3790053F9F0 /* NewRecordViewController.m */,
-				93E767E718B5F9BA0053F9F0 /* NewRecordViewController.xib */,
+				93E767E418B5F3790053F9F0 /* RecordViewController.h */,
+				93E767E518B5F3790053F9F0 /* RecordViewController.m */,
+				93E767E718B5F9BA0053F9F0 /* RecordViewController.xib */,
 				93DE161618B4AB7F00A46FD2 /* PasswordGenerator.h */,
 				93DE161718B4AB7F00A46FD2 /* PasswordGenerator.m */,
 				93E767E118B5EDD90053F9F0 /* Preferences.h */,
@@ -141,7 +152,10 @@
 				93E767DF18B5DA9A0053F9F0 /* RecordsManager.m */,
 				93E767D918B5D8DE0053F9F0 /* RecordsViewController.h */,
 				93E767DA18B5D8DE0053F9F0 /* RecordsViewController.m */,
-				93E767DB18B5D8DE0053F9F0 /* RecordsViewController.xib */,
+				DA08C9DA1E27C3D4002EB84A /* RecordsViewController.xib */,
+				DAA48A661E10088900487FD6 /* PropertiesViewController.h */,
+				DAA48A671E10088900487FD6 /* PropertiesViewController.m */,
+				DAA48A681E10088900487FD6 /* PropertiesViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -185,7 +199,7 @@
 		93DE15D718B4AA8D00A46FD2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Noveo;
 			};
 			buildConfigurationList = 93DE15DA18B4AA8D00A46FD2 /* Build configuration list for PBXProject "PasswordManager" */;
@@ -210,10 +224,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93E767E818B5F9BA0053F9F0 /* NewRecordViewController.xib in Resources */,
+				DAA48A651E1007C100487FD6 /* properties.png in Resources */,
+				93E767E818B5F9BA0053F9F0 /* RecordViewController.xib in Resources */,
 				93DE15ED18B4AA8D00A46FD2 /* InfoPlist.strings in Resources */,
 				93DE15F518B4AA8D00A46FD2 /* Images.xcassets in Resources */,
-				93E767DD18B5D8DE0053F9F0 /* RecordsViewController.xib in Resources */,
+				DA08C9D81E27C3D4002EB84A /* RecordsViewController.xib in Resources */,
+				DAA48A6A1E10088900487FD6 /* PropertiesViewController.xib in Resources */,
+				DA0A82FE1E4B2C91001967A4 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,8 +246,9 @@
 				93E767DC18B5D8DE0053F9F0 /* RecordsViewController.m in Sources */,
 				93DE162118B5955100A46FD2 /* NSString+Shuffling.m in Sources */,
 				93DE161818B4AB7F00A46FD2 /* PasswordGenerator.m in Sources */,
+				DAA48A691E10088900487FD6 /* PropertiesViewController.m in Sources */,
 				93DE161E18B5929400A46FD2 /* NSMutableString+Exchange.m in Sources */,
-				93E767E618B5F3790053F9F0 /* NewRecordViewController.m in Sources */,
+				93E767E618B5F3790053F9F0 /* RecordViewController.m in Sources */,
 				93E767E318B5EDD90053F9F0 /* Preferences.m in Sources */,
 				93E767E018B5DA9A0053F9F0 /* RecordsManager.m in Sources */,
 				93DE15EF18B4AA8D00A46FD2 /* main.m in Sources */,
@@ -248,6 +266,14 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		DA08C9DA1E27C3D4002EB84A /* RecordsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA08C9D91E27C3D4002EB84A /* en */,
+			);
+			name = RecordsViewController.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -255,7 +281,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -265,13 +290,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -284,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -294,7 +325,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -304,20 +334,25 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -331,6 +366,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PasswordManager/PasswordManager-Prefix.pch";
 				INFOPLIST_FILE = "PasswordManager/PasswordManager-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "noveo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -344,6 +380,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PasswordManager/PasswordManager-Prefix.pch";
 				INFOPLIST_FILE = "PasswordManager/PasswordManager-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "noveo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

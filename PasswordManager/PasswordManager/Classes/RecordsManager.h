@@ -23,7 +23,12 @@
 /**
  *  Registers the specified record.
  */
-- (void)registerRecord:(NSDictionary *)record;
+- (void)registerRecord:(NSDictionary *)record atIndex:(NSUInteger)index;
+
+/**
+ *  Delete the specified record.
+ */
+- (void)deleteRecordAtIndex:(NSUInteger)index;
 
 /**
  *  Returns the records the receiver manages.
@@ -36,5 +41,11 @@
  *  @return @c YES if the records were saved successfully to disk.
  */
 - (BOOL)synchronize;
+
+/**
+ * Erase unused storage
+ * @param storageType
+ */
+- (void)eraseStorage:(NSInteger)storageType;
 
 @end
